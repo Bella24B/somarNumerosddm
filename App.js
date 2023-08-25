@@ -6,6 +6,8 @@ const App = () =>{
     input1:'',
     input2:'',
     input3:'',
+    input4:'',
+    input5:'',
 
   });
   const[soma,setSoma] = useState(0);
@@ -13,8 +15,8 @@ const App = () =>{
     setInputValues({...inputValues,[inputName]:value});
  };
   const handleSoma= ()=>{
-    const {input1, input2, input3 }= inputValues;
-    const result = parseInt(input1) + parseInt(input2) + parseInt(input3) ;
+    const {input1, input2, input3, input4, input5 }= inputValues;
+    const result = parseInt(input1) + parseInt(input2) + parseInt(input3) + parseInt(input4) + parseInt(input5);
     setSoma(result);
  };
     return (
@@ -41,6 +43,22 @@ const App = () =>{
         style={styles.input}
         onChangeText={(value)=> handleInputChange('input3', value)}
         value={inputValues.input3}
+        keyboardType='numeric'
+         />
+
+        <Text style={styles.label}>Quarto Número:</Text>
+        <TextInput
+        style={styles.input}
+        onChangeText={(value)=> handleInputChange('input4', value)}
+        value={inputValues.input4}
+        keyboardType='numeric'
+         />
+
+        <Text style={styles.label}>Quinto Número:</Text>
+        <TextInput
+        style={styles.input}
+        onChangeText={(value)=> handleInputChange('input5', value)}
+        value={inputValues.input5}
         keyboardType='numeric'
          />
 
